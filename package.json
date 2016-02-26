@@ -1,7 +1,7 @@
 {
-  "name": "postcss-import",
+  "name": "import-postcss",
   "version": "8.0.2",
-  "description": "PostCSS plugin to import CSS files",
+  "description": "PostCSS plugin to import CSS files at whatever place you'd like to",
   "keywords": [
     "css",
     "postcss",
@@ -12,7 +12,7 @@
   ],
   "author": "Maxime Thirouin",
   "license": "MIT",
-  "repository": "https://github.com/postcss/postcss-import.git",
+  "repository": "https://github.com/iamale/import-postcss.git",
   "files": [
     "index.js",
     "lib"

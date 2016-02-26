@@ -1,4 +1,4 @@
-# postcss-import
+# import-postcss
 
 [![Unix Build status](https://img.shields.io/travis/postcss/postcss-import/master.svg?branch=master&label=unix%20build)](https://travis-ci.org/postcss/postcss-import)
 [![Windows Build status](https://img.shields.io/appveyor/ci/MoOx/postcss-import/master.svg?label=window%20build)](https://ci.appveyor.com/project/MoOx/postcss-import/branch/master)
@@ -14,6 +14,11 @@ or local modules.
 _When importing a module, it will looks for `index.css` or file referenced in
 `package.json` in the `style` or `main` fields._
 You can also provide manually multiples paths where to look at.
+
+This is a fork of [postcss-import][], which is awesome, but [deliberately doesn't support imports in the middle of file][issue-176].
+
+[postcss-import]: https://github.com/postcss/postcss-import
+[issue-176]: https://github.com/postcss/postcss-import/issues/176
 
 **Notes:**
 
@@ -33,7 +38,7 @@ If this behavior is not what you want, look at `skipDuplicates` option
 ## Installation
 
 ```console
-$ npm install postcss-import
+$ npm install import-postcss
 ```
 
 ## Usage
@@ -46,7 +51,7 @@ work from input dirname.
 // dependencies
 var fs = require("fs")
 var postcss = require("postcss")
-var atImport = require("postcss-import")
+var atImport = require("import-postcss")
 
 // css to be processed
 var css = fs.readFileSync("css/input.css", "utf8")
@@ -193,7 +198,7 @@ You can use it for hot-reloading in webpack `postcss-loader` like this:
 ```js
 postcss: function(webpack) {
   return [
-    require('postcss-import')({
+    require('import-postcss')({
       addDependencyTo: webpack
       /* Is equivalent to
       onImport: function (files) {
@@ -209,7 +214,7 @@ postcss: function(webpack) {
 
 ```js
 var postcss = require("postcss")
-var atImport = require("postcss-import")
+var atImport = require("import-postcss")
 
 postcss()
   .use(atImport({
